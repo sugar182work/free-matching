@@ -44,7 +44,13 @@ export default {
    * add default router
    */
   router: {
-    middleware: ['authenticated', 'authpage'],
+    middleware: ['authenticated', 'authpage']
+  },
+  /**
+   * gcm sender id
+   */
+  manifest: {
+    gcm_sender_id: '103953800507'
   },
   /*
    ** Nuxt.js dev-modules
@@ -102,9 +108,9 @@ export default {
           enforce: 'pre',
           test: /\.(js|vue)$/,
           loader: 'eslint-loader',
-          exclude: /(node_modules)/,
+          exclude: /(node_modules)/
         })
       }
-    },
+    }
   }
 }
