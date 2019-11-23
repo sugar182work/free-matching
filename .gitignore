@@ -88,3 +88,12 @@ sw.*
 
 # Vim swap files
 *.swp
+
+# Firebase Config 本来はGit管理しない
+firebase.config
+
+# Test code　本来はGit管理したい
+test/
+
+#.firebase なんかこれ効かない？
+.firebase/*.cache
