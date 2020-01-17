@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <Navi />
-    <v-content>
+    <v-content class="bg-body">
       <v-container>
         <nuxt />
       </v-container>
@@ -20,3 +20,10 @@ export default {
   },
 }
 </script>
+
+<style>
+.bg-body {
+  background-image: url('https://picsum.photos/seed/picsum/1920/1080');
+  background-repeat: repeat;
+}
+</style>
