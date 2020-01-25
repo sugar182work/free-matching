@@ -18,6 +18,7 @@
       <v-toolbar-title>自由な出会いスペース</v-toolbar-title>
 
       <v-spacer></v-spacer>
+      {{ now }}
     </v-app-bar>
     <v-sheet
       id="scrolling-techniques-2"
@@ -28,3 +29,16 @@
     </v-sheet>
   </v-card>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      now: null,
+    }
+  },
+  mounted() {
+    this.now = this.$dayjs().format('YYYY/MM/DD')
+  },
+}
+</script>
