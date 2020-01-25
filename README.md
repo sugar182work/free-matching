@@ -19,7 +19,7 @@ $ npm run start
 $ npm run generate
 ```
 
-# Use dayjs
+### Use dayjs
 ``` javascript
   this.$dayjs().format('YYYY/MM/DD')
 ```
