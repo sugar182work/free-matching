@@ -16,8 +16,22 @@
       </template>
 
       <v-toolbar-title>自由な出会いスペース</v-toolbar-title>
-
       <v-spacer></v-spacer>
+      <template v-if="isLoggedIn">
+        <v-icon>mdi-account</v-icon>
+        <v-btn text to="/" nuxt>
+          {{ username }}
+        </v-btn>
+        <v-btn v-if="isLoggedIn" text @click="logout" to="/" nuxt>
+          Logout
+        </v-btn>
+      </template>
+      <template v-else>
+        <v-btn text to="/login" nuxt>
+          Login
+        </v-btn>
+      </template>
+
       {{ now }}
     </v-app-bar>
     <v-sheet
@@ -31,11 +45,19 @@
 </template>
 
 <script>
+import { mapState, mapGetters, mapActions } from 'vuex'
 export default {
   data() {
     return {
       now: null,
     }
+  },
+  computed: {
+    ...mapState('auth', ['username']),
+    ...mapGetters('auth', ['isLoggedIn']),
+  },
+  methods: {
+    ...mapActions('auth', ['logout']),
   },
   mounted() {
     this.now = this.$dayjs().format('YYYY/MM/DD')
