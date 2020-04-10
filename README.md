@@ -1,3 +1,6 @@
+# プライベートに移行しました
+GCPのAPIキー等々の流出防止のためプライベートリポジトリでの開発に変更しました
+
 # free-matching
 
 > free-matching web app
